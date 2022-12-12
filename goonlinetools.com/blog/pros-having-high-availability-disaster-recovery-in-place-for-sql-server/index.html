@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html >
+
+<!-- Mirrored from goonlinetools.com/blog/pros-having-high-availability-disaster-recovery-in-place-for-sql-server/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 19:01:43 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8">
+<title>Pros of Having High Availability and Disaster Recovery in Place for your SQL Server</title>
+<script src="../../cdn-cgi/apps/head/V4B9DrHYTQcRylhqyWigNfP25u0.js"></script><script defer="" crossorigin="anonymous" src="../../../pagead2.googlesyndication.com/pagead/js/f35ed.txt?client=ca-pub-5164873565615648"></script>
+<script>if (!window.__abg_called){ (window.adsbygoogle = window.adsbygoogle || []); adsbygoogle.pauseAdRequests=0;
+            adsbygoogle.push({
+        google_ad_client: "ca-pub-5164873565615648",
+        overlays: {bottom: false},
+        
+      }); window.__abg_called = true;}</script>
+<link rel="icon" sizes="16x16" href="../../favicon/favicon-16x16.png">
+<link rel="icon" sizes="32x32" href="../../favicon/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+<script head="">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N356CGN');
+        </script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="description" content="If you run an SQL Server solution, then the chances are that it is a crucial cornerstone of some aspect of your business operations. Because of this, downtime needs to be avoided and availability preserved at all costs. Likewise, you have to be prepared to recover quickly in the event that disaster strikes, or else […]">
+<meta name="og:title" content="Pros of Having High Availability and Disaster Recovery in Place for your SQL Server">
+<meta name="og:description" content="If you run an SQL Server solution, then the chances are that it is a crucial cornerstone of some aspect of your business operations. Because of this, downtime needs to be avoided and availability preserved at all costs. Likewise, you have to be prepared to recover quickly in the event that disaster strikes, or else […]">
+<meta name="og:image" content="https://app.goonlinetools.com/wp-content/uploads/2021/11/sql-server.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@goonlinetools">
+<meta name="twitter:title" content="Pros of Having High Availability and Disaster Recovery in Place for your SQL Server">
+<meta name="twitter:description" content="If you run an SQL Server solution, then the chances are that it is a crucial cornerstone of some aspect of your business operations. Because of this, downtime needs to be avoided and availability preserved at all costs. Likewise, you have to be prepared to recover quickly in the event that disaster strikes, or else […]">
+<meta name="twitter:image" content="https://app.goonlinetools.com/pros-having-high-availability-disaster-recovery-in-place-for-sql-server/"><link rel="modulepreload" href="_payload.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/entry.71944e6b.js"><link rel="preload" as="style" href="../../_nuxt/entry.ade07298.css"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/default.59f65c6c.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/composables.81b42008.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/component.6fd50fe3.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/asyncData.51a27acc.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/Search.c4c29f84.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/tools.98013ce6.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/index.d1f3a0e4.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/User.2f6d6a6c.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/auth.ab07ab26.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/_slug_.5124ff34.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/components.87319648.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/Side.54ab2737.js"><link rel="modulepreload" as="script" crossorigin href="../../_nuxt/fetch.5349f18e.js"><link rel="prefetch" as="script" crossorigin href="../../_nuxt/avoid-loggedin.2a51a7a5.js"><link rel="prefetch" as="script" crossorigin href="../../_nuxt/avoid-loggedout.4e27120a.js"><link rel="prefetch" as="script" crossorigin href="../../_nuxt/error-component.5b0a87e6.js"><link rel="stylesheet" href="../../_nuxt/entry.ade07298.css"><script>const w=window,de=document.documentElement,knownColorSchemes=["dark","light"],preference=window.localStorage.getItem("nuxt-color-mode")||"system";let value=preference==="system"?getColorScheme():preference;const forcedColorMode=de.getAttribute("data-color-mode-forced");forcedColorMode&&(value=forcedColorMode),addColorScheme(value),w["__NUXT_COLOR_MODE__"]={preference,value,getColorScheme,addColorScheme,removeColorScheme};function addColorScheme(e){const o=""+e+"",t="theme";de.classList?de.classList.add(o):de.className+=" "+o,t&&de.setAttribute("data-"+t,e)}function removeColorScheme(e){const o=""+e+"",t="theme";de.classList?de.classList.remove(o):de.className=de.className.replace(new RegExp(o,"g"),""),t&&de.removeAttribute("data-"+t)}function prefersColorScheme(e){return w.matchMedia("(prefers-color-scheme"+e+")")}function getColorScheme(){if(w.matchMedia&&prefersColorScheme("").media!=="not all"){for(const e of knownColorSchemes)if(prefersColorScheme(":"+e).matches)return e}return"light"}
+</script></head>
+<body ><div id="__nuxt"><!--[--><div class="max-w-screen-xl border dark:border-gray-700 mx-auto"><div class="bg-white-300 navbar border dark:border-gray-700 bg-base-100"><div class="flex-1"><a href="../../index.html"><img src="../../logo.png" class="btn btn-ghost" alt="GoOnlineTools"></a><a href="../../index.html"><span class="normal-case text-xl">GoOnlineTools</span></a></div><div class="mt-1"><div class=""><div><button><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search mr-5" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path></svg></button><!----></div></div></div><div class="flex-none"><div><!----><button class="btn btn-sm mr-2"> Login </button><!----></div></div></div><!--[--><!--[--><!--[--><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----><div class="grid grid-cols-1 mb-4 md:grid-cols-3 gap-4 mt-4"><div class="col-span-2 mr-4 md:mr-0"><div class="bg-white ml-4 rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"><img class="rounded-t-lg w-full" src="../../../app.goonlinetools.com/wp-content/uploads/2021/11/sql-server.jpg" alt=""><h1 class="mb-2 mt-8 ml-6 mr-6 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">Pros of Having High Availability and Disaster Recovery in Place for your SQL Server</h1><div class="p-5"><section class="mb-3 prose lg:prose-xl">
+<p>If you run an SQL Server solution, then the chances are that it is a crucial cornerstone of some aspect of your business operations.</p>
+
+
+
+<p>Because of this, downtime needs to be avoided and availability preserved at all costs. Likewise, you have to be prepared to recover quickly in the event that disaster strikes, or else face dire consequences.</p>
+
+
+
+<p>Here is a look at exactly how important it is to embrace high availability (HA) and disaster recovery (DR) for your SQL Server ecosystem, and what this will mean for continuity in your organization.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="682" src="../../../app.goonlinetools.com/wp-content/uploads/2021/11/image-1024x682.png" alt="" class="wp-image-180" srcset="https://app.goonlinetools.com/wp-content/uploads/2021/11/image-1024x682.png 1024w, https://app.goonlinetools.com/wp-content/uploads/2021/11/image-300x200.png 300w, https://app.goonlinetools.com/wp-content/uploads/2021/11/image-768x512.png 768w, https://app.goonlinetools.com/wp-content/uploads/2021/11/image-1200x800.png 1200w, https://app.goonlinetools.com/wp-content/uploads/2021/11/image.png 1280w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption> Image Source: <a href="https://pixabay.com/illustrations/binary-code-binary-binary-system-4437421/">Pixabay</a> </figcaption></figure>
+
+
+
+<h2><strong>Hardware failures can be overcome</strong></h2>
+
+
+
+<p>Every server is susceptible to faults and flaws in its hardware, which could leave mission-critical apps and data inaccessible for protracted periods.</p>
+
+
+
+<p>This is where HA comes into play, providing you with the option to add failover servers to your on-site or cloud-powered database setup. That way, when your primary database gets derailed for whatever reason, a secondary copy that is mirrored exactly will kick in to save your bacon.</p>
+
+
+
+<p>These so-called always-on availability groups (AGs) have been around since SQL Server 2012, and remain an important continuity-preserving aspect of modern database implementations. Of course, you also need to get insight into <a href="https://www.sentryone.com/sql-server/alwayson-availability-groups" target="_blank" rel="noreferrer noopener">the current state of your AGs</a> if you want to test out your failsafe solutions ahead of a disaster, rather than crossing your fingers and hoping for the best.</p>
+
+
+
+<h2><strong>Disaster recovery is streamlined</strong></h2>
+
+
+
+<p>Even the most closely monitored and carefully configured databases can suffer <a href="https://www.forbes.com/sites/forbestechcouncil/2019/03/12/the-hidden-costs-of-downtime/?sh=4490f3e774ce" target="_blank" rel="noreferrer noopener">costly unplanned downtime</a>, whether due to power outages, inclement weather conditions, on-site dilemmas such as fires and flooding, and a litany of other catastrophes.</p>
+
+
+
+<p>As such, you have to assume that calamity will strike at some point and plan to recover from such disasters in addition to attempting to avoid them in the first place.</p>
+
+
+
+<p>HA can be powered by passive, secondary servers that sit in the cloud and provide almost instant initiation if an on-site primary database is rendered inoperable.</p>
+
+
+
+<p>This means that rather than having to spend hours attempting to recover from disasters, you can have a nearly gapless level of availability for apps and services that are reliant on your SQL infrastructure.</p>
+
+
+
+<h2><strong>Additional advantages are available</strong></h2>
+
+
+
+<p>The use of secondary servers for backup and disaster recovery will not just be beneficial from an availability and continuity perspective.</p>
+
+
+
+<p>For example, one oft-overlooked perk is that you can use secondary servers to check for database consistency, and thus gain an awareness of issues that may be otherwise undetected in your primary server.</p>
+
+
+
+<p>Likewise, you can look into how resources are being used and analyze this data to gain insights into the capabilities of your hardware and the suitability of your software setup, letting you know if <a href="../../sql-formatter/index.html" target="_blank" rel="noreferrer noopener">code needs to be improved</a>.</p>
+
+
+
+<p>In essence, if you want your SQL Server ecosystem to be as robust and reliable as possible, then implementing HR and DR should be a priority. It is far better to invest the time and money required to prepare for disasters ahead of time, rather than waiting for them to occur and only then taking action.</p>
+</section></div></div></div><div class="md:mr-4 ml-4 md:ml-0"><div class="bg-white rounded-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"><div class="mt-4 ml-4 mr-4 mb-4 text-center"><ins class="adsbygoogle" style="display:block;" data-ad-client="ca-pub-5164873565615648" data-ad-slot="2671738137" data-ad-format="auto" data-ad-region="page-0.7692520444979347"></ins></div></div></div></div><!--]--><!--]--><!--]--><footer class="p-4 border bg-white rounded-lg shadow md:px-6 md:py-8 dark:border-gray-700 dark:bg-gray-800"><div class="sm:flex sm:items-center sm:justify-between"><a href="../../index.html" class="flex items-center mb-4 sm:mb-0"><img src="../../logo.png" class="mr-3 h-8" alt="GoOnlineTools Logo"><span class="self-center text-1xl font-semibold whitespace-nowrap dark:text-white">Go Online Tools</span></a><ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400"><!--[--><li><a href="../../index.html" class="mr-4 hover:underline md:mr-6">Home</a></li><li><a href="../index.html" class="mr-4 hover:underline md:mr-6">Blog</a></li><li><a href="../../about/index.html" class="mr-4 hover:underline md:mr-6">About Us</a></li><li><a href="../../privacy-policy/index.html" class="mr-4 hover:underline md:mr-6">Privacy Policy</a></li><li><a href="../../disclaimer/index.html" class="mr-4 hover:underline md:mr-6">Disclaimer</a></li><li><a href="../../contact/index.html" class="mr-4 hover:underline md:mr-6">Contact Us</a></li><!--]--></ul></div><hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"><span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="../../index.html" class="hover:underline">GoOnlineTools</a>. All Rights Reserved. </span><div class="max-w-xs mx-auto mt-6 mb-4"><div class="grid grid-cols-2 gap-4"><div class=""><label for="countries" class="block text-center mr-4 mt-1 text-sm font-medium text-gray-900 dark:text-gray-400">Language:</label></div><div class=""><select class="bg-gray-50 mx-auto border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"><!--[--><option>English</option><option>Spanish</option><option>Indonesian</option><!--]--></select></div></div></div><div class="p-4 gap-4 text-center mx-auto"><button class="mr-2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-5 h-5" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h6v2H7a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2h-4v-2h6a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z"></path></svg></button><button class="ml-2 mr-2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-5 h-5" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m5.64 17l-.71.71a1 1 0 0 0 0 1.41a1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm7-7a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1ZM5.64 7.05a1 1 0 0 0 .7.29a1 1 0 0 0 .71-.29a1 1 0 0 0 0-1.41l-.71-.71a1 1 0 0 0-1.41 1.41Zm12 .29a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.64.71a1 1 0 0 0 0 1.41a1 1 0 0 0 .66.29ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-9 8a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Zm6.36-2A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0a1 1 0 0 0 0-1.41ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 3.5-3.5a3.5 3.5 0 0 1-3.5 3.5Z"></path></svg></button><button class="ml-2"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="w-5 h-5" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M21.64 13a1 1 0 0 0-1.05-.14a8.05 8.05 0 0 1-3.37.73a8.15 8.15 0 0 1-8.14-8.1a8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69a1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14a9.79 9.79 0 0 0 2.1-.22a8.11 8.11 0 0 1-7.18 4.32Z"></path></svg></button><p class="mt-3">Theme - system</p></div></footer></div><!--]--></div><script type="module">import p from "/blog/pros-having-high-availability-disaster-recovery-in-place-for-sql-server/_payload.js";window.__NUXT__={...p,...((function(a,b,c,d){return {state:{"$scolor-mode":{preference:d,value:d,unknown:b,forced:a}},_errors:{},serverRendered:b,config:{public:{firebaseApiKey:"AIzaSyDJ-_Hnn_UeDAB2jYjcXplh4XKbJ5h6b_M",firebaseAuthDomain:"goonlinetools-com.firebaseapp.com",firebaseDatabaseURL:"https:\u002F\u002Fgoonlinetools-com.firebaseio.com",firebaseProjectID:"goonlinetools-com",firebaseStorageBucket:"goonlinetools-com.appspot.com",firebaseMessagingSendID:"951512181330",firebaseAppID:"1:951512181330:web:7d84c023bae4cc2271cd8b",jsonEditorConfig:{componentName:"JsonEditor",options:{},includeCss:b},"google-adsense":{tag:"adsbygoogle",pageLevelAds:a,includeQuery:a,analyticsUacct:c,analyticsDomainName:c,overlayBottom:a,test:a,onPageLoad:a,pauseOnLoad:a,id:"ca-pub-5164873565615648"}},app:{baseURL:"\u002F",buildAssetsDir:"\u002F_nuxt\u002F",cdnURL:c}},pinia:{auth:{user:null}},prerenderedAt:1670859344813}}(false,true,"","system")))}</script><script type="module" src="../../_nuxt/entry.71944e6b.js" crossorigin></script><script type="module" src="../../_nuxt/default.59f65c6c.js" crossorigin></script><script type="module" src="../../_nuxt/Search.c4c29f84.js" crossorigin></script><script type="module" src="../../_nuxt/User.2f6d6a6c.js" crossorigin></script><script type="module" src="../../_nuxt/_slug_.5124ff34.js" crossorigin></script><script><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N356CGN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --></script></body>
+
+<!-- Mirrored from goonlinetools.com/blog/pros-having-high-availability-disaster-recovery-in-place-for-sql-server/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 12 Dec 2022 19:01:44 GMT -->
+</html>

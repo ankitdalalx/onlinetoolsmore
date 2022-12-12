@@ -1,0 +1,13 @@
+HTTrack3.49-2+htsswf+htsjava launched on Tue, 13 Dec 2022 00:30:12 at https://goonlinetools.com/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://goonlinetools.com/ -O1 "C:\My Web Sites\goonlinetools.com_" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+00:30:30	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://goonlinetools.com/)
+00:32:05	Warning: 	Link https://goonlinetools.com/cdn-cgi/l/email-protection not scanned (follow robots meta tag)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 10 seconds : 336 links scanned, 334 files written (34297370 bytes overall) [28754756 bytes received at 221190 bytes/sec], 7807661 bytes transferred using HTTP compression in 191 files, ratio 25%, 9.6 requests per connection
+(1 errors, 1 warnings, 0 messages)
